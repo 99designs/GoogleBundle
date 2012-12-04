@@ -4,9 +4,10 @@
 /* <![CDATA[ */
 var google_conversion_id = {{ google_adwords.activeConversion.getId() }};
 var google_conversion_label = "{{ google_adwords.activeConversion.getLabel() }}";
-var google_custom_params = {{ google_adwords.activeConversion.getCustomParams() }};
-var google_remarketing_only = {{ google_adwords.activeConversion.getRemarketingOnly() }};
+var google_remarketing_only = {{ google_adwords.activeConversion.isRemarketingOnly() }};
+{% if google_adwords.activeConversion.getValue() > 0 %}
 var google_conversion_value = {{ google_adwords.activeConversion.getValue() }};
+{% endif %}
 /* ]]> */
 </script>
 <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
